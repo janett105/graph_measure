@@ -1,0 +1,9 @@
+original : 148 subjects (HC 74, SCZ 72, disenrolled 2)
+fmriprep : 148 subjects (HC 74, SCZ 72, disenrolled 2)
+FC100 : 143 subjetcs (HC 74, SCZ 67, disenrolled 2)
+
+('sub-40007', ValueError('`x` must contain at least 2 elements.')), 
+('sub-40016', ValueError('`x` must contain at least 2 elements.')), 
+('sub-40039', ValueError('`x` must contain at least 2 elements.')), 
+('sub-40071', ValueError('`x` must contain at least 2 elements.')), 
+('sub-40088', ValueError('`x` must contain at least 2 elements.'))]
