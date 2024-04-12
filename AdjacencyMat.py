@@ -2,7 +2,6 @@ import numpy as np
 from scipy.spatial import distance
 from scipy.sparse import coo_matrix, csr
 import glob
-import torch
 
 def compute_KNN_graph(matrix, k_degree=100, metric='euclidean'):
     """ Calculate the adjacency matrix from the connectivity matrix."""
@@ -45,14 +44,16 @@ def adjacency(dist, idx):
     return W.todense()
 
 if __name__=='__main__':
-    FCfile = glob.glob('data/COBRE/*.npy')
+    Cohert_name='UCLA_CNP'
+
+    FCfile = glob.glob(f'data/{Cohert_name}/*.npy')
 
     for word in FCfile:
         connectivity = np.load(word)
         adj = compute_KNN_graph(connectivity)
 
-        temp = word.replace('data/COBRE\\','')
+        temp = word.replace(f'data/{Cohert_name}\\','')
         temp = temp.replace('.npy', '')
         temp = temp+'_adj'
 
-        np.save(f'data/COBRE/adjacency/{temp}',adj)
+        np.save(f'data/{Cohert_name}/adjacency/{temp}',adj)
