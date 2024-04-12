@@ -6,6 +6,8 @@ import seaborn as sns
 import os
 from scipy.stats import spearmanr
 import json
+import pickle
+
 
 from network import Network
 from AdjacencyMat import compute_KNN_graph
@@ -18,14 +20,14 @@ def createDirectory(directory):
         print("Error: Failed to create the directory.")
 
 local_measure_dict={
-    'betweenness': pd.DataFrame(),
-    'strength': pd.DataFrame(),
-    'strengths_nodal_positive': pd.DataFrame(),
+    # 'betweenness': pd.DataFrame(),
+    # 'strength': pd.DataFrame(),
+    # 'strengths_nodal_positive': pd.DataFrame(),
     # 'clustering_coefficient_positive': pd.DataFrame(),
     # 'clustering_coefficient_negative': pd.DataFrame(),
     # 'local_assortativity_positive': pd.DataFrame(),
     # 'clustering_coefficient': pd.DataFrame(),
-    # 'local_efficiency': pd.DataFrame(),
+    'local_efficiency': pd.DataFrame(),
 }
 
 global_measure_dict={
@@ -167,13 +169,17 @@ if __name__=='__main__':
         if is_global_:global_(network, global_measure_dict)
 
     for key in local_measure_dict.keys():
-        print(key)
         column_names = [f"{key}_{i+1}" for i in range(100)]
-        print(len(local_measure_dict[key].columns))
         local_measure_dict[key].columns=column_names
         local_measure_dict[key].to_csv(f'results/local/{key}.csv')
 
-    # if is_global_:global_sum(global_measure_dict, UCLA_CNP_df)
+    with open('results/local/globals.pickle', 'wb') as handle:
+        pickle.dump(global_measure_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+    # if is_global_:
+    #     with open('results/local/globals.pickle', 'rb') as handle:
+    #         loglobal_measure_dict = pickle.load(handle)
+    #     global_sum(global_measure_dict, UCLA_CNP_df)
     # if is_local:local_sum(local_measure_dict, UCLA_CNP_df)
     
     # spearman_corr_df.to_csv("corr_new.csv")
