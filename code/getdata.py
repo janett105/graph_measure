@@ -6,15 +6,15 @@ from network import Network
 UCLA_CNP_df=pd.read_csv('data/UCLA_CNP/UCLA_CNP_100FC_phenotype_cognition.csv')[['participant_id', 'diagnosis', 'Cohert', 'PC1']]
 
 local_measure_dict={
-    # 'betweenness': pd.DataFrame(),
-    # 'strength': pd.DataFrame(),
-    # 'strengths_nodal_positive': pd.DataFrame(),
+    'betweenness': pd.DataFrame(),
+    'strength': pd.DataFrame(),
+    'strengths_nodal_positive': pd.DataFrame(),
     'strengths_nodal_negative': pd.DataFrame(),
-    # 'clustering_coefficient_positive': pd.DataFrame(),
-    # 'clustering_coefficient_negative': pd.DataFrame(),
-    # 'local_assortativity_positive': pd.DataFrame(),
-    # 'clustering_coefficient': pd.DataFrame(),
-    # 'local_efficiency': pd.DataFrame(),
+    'clustering_coefficient_positive': pd.DataFrame(),
+    'clustering_coefficient_negative': pd.DataFrame(),
+    'local_assortativity_positive': pd.DataFrame(),
+    'clustering_coefficient': pd.DataFrame(),
+    'local_efficiency': pd.DataFrame(),
 }
 
 global_measure_dict={
@@ -43,6 +43,7 @@ if __name__=='__main__':
         corr = np.load(f'data/UCLA_CNP/FC100_{subj}.npy') # correlation matrix should be zero diagonal
         adj = np.load(f'data/UCLA_CNP/adjacency/FC100_{subj}_adj.npy')
 
+        # # FC 값의 크기가 상위 10%인 것만 남기고 나머진 0으로 설정
         # abs_corr = np.abs(corr)
         # top_10_percentile_threshold = np.percentile(abs_corr, 90)
         # corr_th = np.where((corr > top_10_percentile_threshold) | (corr < -top_10_percentile_threshold), corr, 0)

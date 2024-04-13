@@ -5,11 +5,8 @@ from pathlib import Path
 import seaborn as sns
 import os
 from scipy.stats import spearmanr
-import json
 import pickle
 
-
-from network import Network
 from AdjacencyMat import compute_KNN_graph
 
 def createDirectory(directory):
@@ -128,4 +125,4 @@ if __name__=='__main__':
         global_sum(global_measure_dict, UCLA_CNP_df)
     if is_local:local_sum(local_measure_dict, UCLA_CNP_df)
     
-    spearman_corr_df.to_csv("corr_loceff.csv")
+    spearman_corr_df.to_csv("corr.csv")
