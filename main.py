@@ -20,15 +20,15 @@ def createDirectory(directory):
         print("Error: Failed to create the directory.")
 
 local_measure_dict={
-    # 'betweenness': pd.read_csv('results/local/betweenness.csv'),
-    # 'strength': pd.read_csv('results/local/strength.csv'),
-    # 'strengths_nodal_positive':pd.read_csv('results/local/strengths_nodal_positive.csv'),
+    'betweenness': pd.read_csv('results/local/betweenness.csv'),
+    'strength': pd.read_csv('results/local/strength.csv'),
+    'strengths_nodal_positive':pd.read_csv('results/local/strengths_nodal_positive.csv'),
     'strengths_nodal_negative':pd.read_csv('results/local/strengths_nodal_negative.csv'),
-    # 'clustering_coefficient_positive':pd.read_csv('results/local/clustering_coefficient_positive.csv'),
-    # 'clustering_coefficient_negative':pd.read_csv('results/local/clustering_coefficient_negative.csv'),
-    # 'local_assortativity_positive':pd.read_csv('results/local/local_assortativity_positive.csv'),
-    # 'clustering_coefficient':pd.read_csv('results/local/clustering_coefficient.csv'),
-    # 'local_efficiency':pd.read_csv('results/local/local_efficiency.csv'),
+    'clustering_coefficient_positive':pd.read_csv('results/local/clustering_coefficient_positive.csv'),
+    'clustering_coefficient_negative':pd.read_csv('results/local/clustering_coefficient_negative.csv'),
+    'local_assortativity_positive':pd.read_csv('results/local/local_assortativity_positive.csv'),
+    'clustering_coefficient':pd.read_csv('results/local/clustering_coefficient.csv'),
+    'local_efficiency':pd.read_csv('results/local/local_efficiency.csv'),
 }
 
 spearman_corr_df=pd.DataFrame(columns=['r', 'p_value'])
