@@ -1,6 +1,7 @@
 original: 272 subjects (HC 130, SCZ 50, ADHD 43,BIPOLAR 49)
 fmriprep 263 subjects
-FC 259subjects (HC 121, SCZ 49, ADHD 40, BIPOLAR 49)
+FC 259 subjects (HC 121, SCZ 49, ADHD 40, BIPOLAR 49)
+-> FC 253 subjects
 
 [FileNotFoundError("No such file or no access: 'D:/MRI/UCLA_CNP/preprocess/fmriprep/derivatives/sub-10193/func/sub-10193_task-rest_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz'"), 
 FileNotFoundError("No such file or no access: 'D:/MRI/UCLA_CNP/preprocess/fmriprep/derivatives/sub-70002/func/sub-70002_task-rest_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz'")]
